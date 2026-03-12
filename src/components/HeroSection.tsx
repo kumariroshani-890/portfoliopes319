@@ -63,7 +63,7 @@ const HeroSection = () => {
           {/* Social links */}
           <div className="flex items-center justify-center gap-4">
             <a
-              href="https://github.com/CharithaReddy2662"
+              href="https://github.com/kumariroshani-890"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
@@ -71,7 +71,7 @@ const HeroSection = () => {
               <Github size={20} />
             </a>
             <a
-              href="https://www.linkedin.com/in/mulecharithareddy/"
+              href="https://www.linkedin.com/in/roshani-kumari-0b9b9028a/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"

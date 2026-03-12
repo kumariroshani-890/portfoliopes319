@@ -9,53 +9,48 @@ interface Project {
   highlights?: string[];
   techStack: string[];
   outcome: string;
+  period: string;
   liveUrl?: string;
   githubUrl?: string;
 }
 
 const projects: Project[] = [
   {
-    icon: "🌱",
-    title: "Vidhura – Sustainable Farming Guide",
-    problem: "Farmers lack instant, localized, language-friendly guidance",
-    solution: "Web platform designed for accessibility and structured information",
-    role: "Frontend Developer – Built responsive UI, structured content, and collaborated on UX design",
-    highlights: ["Voice-based interaction concept", "Location-aware guidance idea", "Clean, accessible UI", "Strong frontend structure"],
-    techStack: ["HTML", "CSS", "JavaScript", "React", "GitHub"],
-    outcome: "Bridges the digital divide for rural farmers by providing accessible, language-friendly guidance that can transform agricultural practices and livelihoods.",
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    icon: "♻️",
-    title: "EchoChic – Clean4Change",
-    problem: "Limited awareness about plastic reduction and sustainable choices",
-    solution: "Purpose-driven web platform promoting sustainability awareness",
-    role: "Full-Stack Developer – Designed and developed the complete website architecture",
-    techStack: ["HTML", "CSS", "JavaScript", "GitHub"],
-    outcome: "Drives environmental consciousness by making sustainability actionable—empowering individuals to make eco-friendly choices that collectively reduce plastic waste.",
-    liveUrl: "#",
-    githubUrl: "#",
+    icon: "🤖",
+    title: "Workout Assistant Chatbot",
+    period: "Apr' 2025 – May' 2025",
+    problem: "Users lack personalized, instant fitness guidance and workout recommendations",
+    solution: "AI-powered fitness chatbot using Flask that delivers personalized workout plans and goal-based training recommendations",
+    role: "Full-Stack Developer – Built backend logic, integrated AI model, and optimized user interaction flow",
+    highlights: ["AI-powered exercise suggestions", "Goal-based training plans", "Fast & adaptive responses", "DeepSeek AI integration"],
+    techStack: ["Python", "Flask", "DeepSeek AI", "LangChain"],
+    outcome: "Provides personalized, intelligent fitness guidance instantly—helping users get tailored workout plans without needing a personal trainer.",
+    githubUrl: "https://github.com/kumariroshani-890",
   },
   {
     icon: "📊",
-    title: "DevOps Log Monitor",
-    problem: "Server logs are scattered and hard to analyze manually in real-time",
-    solution: "Automated log monitoring system that tracks, filters, and alerts on critical server events",
-    role: "DevOps Engineer – Built the complete log monitoring and alerting pipeline",
-    techStack: ["Linux", "Bash", "Shell Scripting", "Cron", "GitHub"],
-    outcome: "Simplifies server health tracking for small teams—automating log analysis saves hours of manual monitoring and helps catch issues before they escalate.",
-    githubUrl: "#",
+    title: "Public Libraries Interactive Dashboard",
+    period: "Mar' 2025 – Apr' 2025",
+    problem: "Complex library data across multiple counties is hard to analyze and visualize",
+    solution: "Excel-based interactive dashboard to analyze key library metrics with dynamic visuals",
+    role: "Data Analyst – Designed PivotTables, charts, slicers, and timelines for data visualization",
+    highlights: ["PivotTables & Charts", "Slicers & Timelines", "Multi-county analysis", "Clean dynamic visuals"],
+    techStack: ["Excel", "PivotTables", "Charts", "Slicers", "Data Analysis"],
+    outcome: "Simplified complex library data into clean, dynamic visuals for better decision-making across multiple counties.",
+    githubUrl: "https://github.com/kumariroshani-890",
   },
-];
-
-const awsProjects = [
-  { title: "Terraform AWS Beginner Guide", desc: "Infrastructure as Code learning with Terraform on AWS" },
-  { title: "S3 Static Website", desc: "Deploying static websites using AWS S3 bucket hosting" },
-  { title: "EC2 Apache Web Server", desc: "Setting up Apache web server on EC2 instance" },
-  { title: "Vidhura AWS Deployment", desc: "Deploying Vidhura project as static website on AWS" },
-  { title: "Simple CI/CD Pipeline – AWS Sandbox", desc: "Building and automating CI/CD workflows on AWS" },
-  { title: "DevOps CI/CD Mini Pipeline", desc: "Automated CI/CD pipeline with Docker and GitHub Actions" },
+  {
+    icon: "💾",
+    title: "Real Time Memory Allocation Tracker",
+    period: "Feb' 2025 – Mar' 2025",
+    problem: "Memory allocation techniques are abstract and hard to understand for OS learners",
+    solution: "Graphical desktop application simulating best-fit and worst-fit memory allocation in real-time",
+    role: "Developer – Built GUI application with real-time system metrics integration",
+    highlights: ["Real-time visualization", "Best-fit & Worst-fit simulation", "CPU & RAM monitoring", "Educational tool"],
+    techStack: ["Python", "Tkinter", "psutil", "OOP"],
+    outcome: "Makes OS memory allocation concepts tangible through interactive visualization—helping students understand complex concepts through hands-on simulation.",
+    githubUrl: "https://github.com/kumariroshani-890",
+  },
 ];
 
 const ProjectsSection = () => {
@@ -72,11 +67,14 @@ const ProjectsSection = () => {
         <div className="space-y-8">
           {projects.map((p) => (
             <div key={p.title} className="bg-card rounded-xl border border-border p-6 md:p-8 card-hover">
-              <div className="flex items-start gap-4 mb-4">
+              <div className="flex items-start gap-4 mb-1">
                 <span className="text-3xl">{p.icon}</span>
-                <h3 className="text-xl font-heading font-bold text-foreground">{p.title}</h3>
+                <div>
+                  <h3 className="text-xl font-heading font-bold text-foreground">{p.title}</h3>
+                  <p className="text-xs text-muted-foreground">{p.period}</p>
+                </div>
               </div>
-              <div className="grid md:grid-cols-2 gap-4 mb-4 text-sm">
+              <div className="grid md:grid-cols-2 gap-4 mb-4 mt-4 text-sm">
                 <div>
                   <p className="text-primary font-medium mb-1">Problem:</p>
                   <p className="text-muted-foreground">{p.problem}</p>
@@ -127,22 +125,6 @@ const ProjectsSection = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* AWS Learning Projects */}
-        <div className="mt-12">
-          <h3 className="text-2xl font-heading font-bold text-foreground mb-2 text-center">
-            AWS Deployment Learning Projects
-          </h3>
-          <p className="text-primary text-sm text-center mb-8">🚀 Currently exploring – hands-on practice projects for cloud fundamentals</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {awsProjects.map((p) => (
-              <div key={p.title} className="bg-card rounded-lg border border-border p-5 card-hover">
-                <h4 className="text-sm font-heading font-semibold text-foreground mb-2">{p.title}</h4>
-                <p className="text-xs text-muted-foreground">{p.desc}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

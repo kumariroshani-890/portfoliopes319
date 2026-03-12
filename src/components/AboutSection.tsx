@@ -7,16 +7,16 @@ const AboutSection = () => {
         </h2>
         <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
           <p>
-            I'm a B.Tech Computer Science & Engineering student at Lovely Professional University, passionate about building systems that scale and solve real-world problems.
+            Hello! I'm Roshani Kumari, a B.Tech Computer Science & Engineering student at Lovely Professional University, specializing in Data Science with an open minor in DevOps.
           </p>
           <p>
-            My approach is hands-on — I build projects to understand how real-world systems work, from frontend interfaces to the concepts behind cloud infrastructure.
+            I'm passionate about technology, problem solving, and building practical solutions using data and software. Currently, I am strengthening my skills in Data Structures & Algorithms, while working on projects using Python and Java.
           </p>
           <p>
-            Currently, I'm focused on strengthening my foundations in cloud computing and DevOps, while actively working on projects that demonstrate clean architecture and scalable design.
+            I enjoy learning by building and experimenting with real projects, and I'm also exploring DevOps practices and modern development workflows.
           </p>
           <p>
-            I believe in continuous learning and building incrementally — starting with solid fundamentals before moving to advanced implementations.
+            My goal is to grow into a skilled software engineer who can build scalable and impactful technology solutions.
           </p>
         </div>
       </div>
