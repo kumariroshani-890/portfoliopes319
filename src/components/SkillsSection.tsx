@@ -1,20 +1,19 @@
 const skillCategories = [
   {
     title: "Programming Languages",
-    skills: ["Java", "Python", "C++", "C"],
+    skills: ["Java", "Python", "C", "C++", "JavaScript"],
   },
   {
     title: "Web Development",
-    skills: ["HTML", "CSS"],
-  },
-  {
-    title: "Cloud & DevOps",
-    label: "📚 Currently learning & exploring",
-    skills: ["AWS", "Linux", "Docker", "CI/CD"],
+    skills: ["HTML", "CSS", "NodeJS"],
   },
   {
     title: "Database & Tools",
-    skills: ["MySQL", "Git"],
+    skills: ["MySQL", "Git", "Jupyter Notebook", "Google Colab", "VS Code"],
+  },
+  {
+    title: "Soft Skills",
+    skills: ["Problem-Solving", "Adaptability", "Teamwork"],
   },
 ];
 
@@ -37,9 +36,6 @@ const SkillsSection = () => {
               <h3 className="text-lg font-heading font-semibold text-foreground mb-1">
                 {cat.title}
               </h3>
-              {cat.label && (
-                <p className="text-xs text-primary mb-3">{cat.label}</p>
-              )}
               <div className="flex flex-wrap gap-2 mt-3">
                 {cat.skills.map((skill) => (
                   <span

@@ -1,38 +1,38 @@
-import { BookOpen, Award, GraduationCap, Pen } from "lucide-react";
+import { BookOpen, Award, GraduationCap } from "lucide-react";
 
 const JourneySection = () => {
   return (
     <section id="journey" className="section-padding">
       <div className="container mx-auto px-6 max-w-4xl">
-        {/* Cloud Learning Journey */}
+        {/* Journey in Data Science */}
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-12 text-center">
-          Cloud Learning <span className="text-gradient">Journey</span>
+          Journey in <span className="text-gradient">Data Science</span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-6 mb-16">
           <div className="bg-card rounded-xl border border-border p-6">
             <h3 className="text-lg font-heading font-semibold text-primary mb-4">Currently Learning</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• AWS core services (EC2, S3, IAM)</li>
-              <li>• CI/CD pipelines & automation</li>
-              <li>• Terraform for Infrastructure as Code</li>
-              <li>• Docker containerization</li>
-              <li>• Linux & shell scripting</li>
+              <li>• Data analysis using Python</li>
+              <li>• Data Structures & Algorithms for strong problem-solving</li>
+              <li>• Data visualization tools and analytical techniques</li>
+              <li>• Basics of DevOps practices and automation</li>
+              <li>• Linux and development workflows</li>
             </ul>
           </div>
           <div className="bg-card rounded-xl border border-border p-6">
-            <h3 className="text-lg font-heading font-semibold text-primary mb-4">Hands-on Deployments</h3>
+            <h3 className="text-lg font-heading font-semibold text-primary mb-4">Hands-on Practice</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• DevOps CI/CD mini pipeline</li>
-              <li>• S3 static website hosting</li>
-              <li>• EC2 Apache web server setup</li>
-              <li>• Terraform AWS infrastructure</li>
+              <li>• Building data analysis and visualization projects</li>
+              <li>• Implementing DSA problem-solving solutions</li>
+              <li>• Developing Python and Java-based applications</li>
+              <li>• Exploring tools and workflows used in modern software development</li>
             </ul>
           </div>
         </div>
 
         <blockquote className="text-center text-lg text-muted-foreground italic border-l-4 border-primary pl-6 max-w-2xl mx-auto mb-16">
-          "My goal is to transform my projects into scalable, cloud-deployed applications and build a strong foundation for a career in cloud engineering."
+          "My goal is to combine data science, problem solving, and modern development practices to build efficient and scalable technology solutions."
         </blockquote>
 
         {/* Training */}
@@ -41,11 +41,12 @@ const JourneySection = () => {
             <BookOpen className="text-primary" size={24} /> Training
           </h3>
           <div className="bg-card rounded-xl border border-border p-6">
-            <h4 className="font-heading font-semibold text-foreground">Data Structures and Algorithm with Java</h4>
-            <p className="text-sm text-muted-foreground mt-1">CipherSchools • Jul' 2025 – Aug' 2025</p>
+            <h4 className="font-heading font-semibold text-foreground">Data Structures & Algorithm using Java</h4>
+            <p className="text-sm text-muted-foreground mt-1">Cipher Schools • Jun' 2025 – Jul' 2025</p>
             <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-              <li>• Completed a summer training program in Java with DSA at CipherSchool, focusing on core data structures, algorithms, and efficient problem-solving.</li>
-              <li>• Built a Library Tracker project using Java, implementing features for book management, user handling, and borrowing records.</li>
+              <li>• Built a strong foundation in core data structures including arrays, linked lists, stacks, queues, and recursion using Java</li>
+              <li>• Strengthened problem-solving skills by implementing algorithms with a focus on time and space complexity optimization</li>
+              <li>• Applied object-oriented programming principles to design efficient, modular, and reusable solutions</li>
             </ul>
             <div className="flex flex-wrap gap-2 mt-3">
               {["Java", "OOP Concepts", "Data Structures & Algorithms"].map((t) => (
@@ -60,11 +61,12 @@ const JourneySection = () => {
           <h3 className="text-2xl font-heading font-bold text-foreground mb-6 flex items-center gap-2">
             <Award className="text-primary" size={24} /> Certificates
           </h3>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { title: "Responsive Web Design", org: "freeCodeCamp" },
-              { title: "Social Networks", org: "NPTEL – IIT Madras" },
-              { title: "DSA with Java", org: "CipherSchools" },
+              { title: "Computational Theory: Language Principle & Finite Automata Theory", org: "Infosys" },
+              { title: "Training in Git and GitHub", org: "Cipher Schools" },
+              { title: "Data Analytics Job Simulations — Deloitte", org: "Deloitte" },
+              { title: "Cloud Computing", org: "NPTEL" },
             ].map((c) => (
               <div key={c.title} className="bg-card rounded-lg border border-border p-4 card-hover text-center">
                 <p className="font-heading font-semibold text-foreground text-sm">{c.title}</p>
@@ -81,33 +83,12 @@ const JourneySection = () => {
           </h3>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              "1st Runner-Up – HackWithVertos Hackathon",
-              "Top 10 Finalist – Miss Verbal Cosmos",
-              "Keynote Speaker – SEMS Foundation",
-              "5 Merit Certificates – Public Speaking",
+              "Earned the 50-Day LeetCode Badge (LeetCode & GeeksforGeeks)",
+              "2nd Runner-Up in a Coding Quiz (LPU CPE)",
             ].map((a) => (
               <div key={a} className="bg-card rounded-lg border border-border p-4 text-sm text-muted-foreground">
                 🏆 {a}
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Articles */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-heading font-bold text-foreground mb-6 flex items-center gap-2">
-            <Pen className="text-primary" size={24} /> Articles
-          </h3>
-          <p className="text-muted-foreground text-sm mb-4">My thoughts and reflections on LinkedIn</p>
-          <div className="space-y-3">
-            {[
-              "India's Language Wars: Balancing Unity and Diversity (Ektha mai Anektha)",
-              "When Borders Tense, India Stands Strong – A Student's Reflection from Punjab",
-            ].map((a) => (
-              <a key={a} href="#" className="block bg-card rounded-lg border border-border p-4 text-sm text-foreground hover:border-primary/50 transition-colors">
-                📝 {a}
-                <span className="text-primary text-xs ml-2">Read on LinkedIn →</span>
-              </a>
             ))}
           </div>
         </div>
@@ -119,9 +100,9 @@ const JourneySection = () => {
           </h3>
           <div className="space-y-4">
             {[
-              { school: "Lovely Professional University", loc: "Punjab, India", degree: "Bachelor of Technology - Computer Science and Engineering", period: "Aug' 2023 – Jun' 2027", score: "CGPA: 6.3" },
-              { school: "Fittjee World School", loc: "Hyd, Telangana", degree: "Intermediate", period: "Apr' 2022 – Mar' 2023", score: "Percentage: 83%" },
-              { school: "Bhashyam High School", loc: "Hyd, Telangana", degree: "Matriculation", period: "Apr' 2020 – Mar' 2021", score: "CGPA: 10.0" },
+              { school: "Lovely Professional University", loc: "Punjab, India", degree: "Bachelor of Technology - Computer Science and Engineering", period: "Aug' 2023 – Jun' 2027", score: "CGPA: 7.23" },
+              { school: "PM Shri Kendriya Vidyalaya No.1, AFS, Agra", loc: "Agra, Uttar Pradesh", degree: "Intermediate", period: "Apr' 2021 – Apr' 2022", score: "Percentage: 71%" },
+              { school: "PM Shri Kendriya Vidyalaya No.2, AFS, Tezpur", loc: "Tezpur, Assam", degree: "Matriculation", period: "Apr' 2019 – Apr' 2020", score: "Percentage: 95%" },
             ].map((e) => (
               <div key={e.school} className="bg-card rounded-lg border border-border p-5">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">

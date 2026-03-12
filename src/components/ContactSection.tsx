@@ -6,7 +6,7 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = `mailto:charithareddy2662@gmail.com?subject=Portfolio Contact from ${formData.name}&body=${formData.message}`;
+    window.location.href = `mailto:roshni1985upl@gmail.com?subject=Portfolio Contact from ${formData.name}&body=${formData.message}`;
   };
 
   return (
@@ -25,13 +25,13 @@ const ContactSection = () => {
             <h3 className="text-lg font-heading font-semibold text-foreground mb-4">Connect With Me</h3>
             <p className="text-sm text-muted-foreground mb-6">Click any icon to connect with me!</p>
             <div className="flex gap-4">
-              <a href="https://github.com/CharithaReddy2662" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
+              <a href="https://github.com/kumariroshani-890" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
                 <Github size={22} />
               </a>
-              <a href="https://www.linkedin.com/in/mulecharithareddy/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
+              <a href="https://www.linkedin.com/in/roshani-kumari-0b9b9028a/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
                 <Linkedin size={22} />
               </a>
-              <a href="mailto:charithareddy2662@gmail.com" className="p-3 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
+              <a href="mailto:roshni1985upl@gmail.com" className="p-3 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
                 <Mail size={22} />
               </a>
             </div>
