@@ -15,10 +15,10 @@ const HeroSection = () => {
             <div className="absolute inset-1 rounded-full overflow-hidden bg-secondary">
               <img
                 src="/profile-photo.jpg"
-                alt="Mule Charitha Reddy"
+                alt="Roshani Kumari"
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://ui-avatars.com/api/?name=CR&background=0ea5e9&color=fff&size=200";
+                  (e.target as HTMLImageElement).src = "https://ui-avatars.com/api/?name=RK&background=0ea5e9&color=fff&size=200";
                 }}
               />
             </div>
@@ -30,15 +30,15 @@ const HeroSection = () => {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-2">
-            Hi, I'm Mule Charitha Reddy
+            Hi, I'm Roshani Kumari
           </h1>
           <p className="text-2xl md:text-3xl font-heading font-semibold text-gradient mb-6 glow-text">
-            Aspiring Cloud Engineer
+            Aspiring Data Scientist
           </p>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8 leading-relaxed">
             CSE undergraduate building real-world projects in{" "}
-            <span className="text-primary">Cloud & DevOps</span>. Strong problem-solver with a passion for{" "}
-            <span className="text-primary">writing</span> and communicating technical ideas clearly.
+            <span className="text-primary">Data Science & ML</span>. Strong problem-solver with a passion for{" "}
+            <span className="text-primary">analyzing data</span> and turning insights into impactful solutions.
           </p>
 
           {/* CTA buttons */}
