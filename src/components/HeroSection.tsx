@@ -37,8 +37,8 @@ const HeroSection = () => {
           </p>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8 leading-relaxed">
             CSE undergraduate building real-world projects in{" "}
-            <span className="text-primary">Cloud & DevOps</span>. Strong problem-solver with a passion for{" "}
-            <span className="text-primary">writing</span> and communicating technical ideas clearly.
+            <span className="text-primary">Data Science & ML</span>. Strong problem-solver with a passion for{" "}
+            <span className="text-primary">analyzing data</span> and turning insights into impactful solutions.
           </p>
 
           {/* CTA buttons */}
