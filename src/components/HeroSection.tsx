@@ -33,7 +33,7 @@ const HeroSection = () => {
             Hi, I'm Roshani Kumari
           </h1>
           <p className="text-2xl md:text-3xl font-heading font-semibold text-gradient mb-6 glow-text">
-            Aspiring Cloud Engineer
+            Aspiring Data Scientist
           </p>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8 leading-relaxed">
             CSE undergraduate building real-world projects in{" "}
