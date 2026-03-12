@@ -30,7 +30,7 @@ const HeroSection = () => {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-2">
-            Hi, I'm Mule Charitha Reddy
+            Hi, I'm Roshani Kumari
           </h1>
           <p className="text-2xl md:text-3xl font-heading font-semibold text-gradient mb-6 glow-text">
             Aspiring Cloud Engineer
