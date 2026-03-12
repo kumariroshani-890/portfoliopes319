@@ -18,7 +18,7 @@ const HeroSection = () => {
                 alt="Roshani Kumari"
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://ui-avatars.com/api/?name=CR&background=0ea5e9&color=fff&size=200";
+                  (e.target as HTMLImageElement).src = "https://ui-avatars.com/api/?name=RK&background=0ea5e9&color=fff&size=200";
                 }}
               />
             </div>
