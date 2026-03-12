@@ -15,7 +15,7 @@ const HeroSection = () => {
             <div className="absolute inset-1 rounded-full overflow-hidden bg-secondary">
               <img
                 src="/profile-photo.jpg"
-                alt="Mule Charitha Reddy"
+                alt="Roshani Kumari"
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = "https://ui-avatars.com/api/?name=CR&background=0ea5e9&color=fff&size=200";
