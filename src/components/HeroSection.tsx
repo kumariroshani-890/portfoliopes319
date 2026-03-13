@@ -1,4 +1,4 @@
-import { Download, ArrowDown, Github, Linkedin } from "lucide-react";
+import { Download, ArrowDown, Github, Linkedin, Youtube } from "lucide-react";
 
 const HeroSection = () => {
   return (
