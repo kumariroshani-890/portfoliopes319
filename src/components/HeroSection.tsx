@@ -78,6 +78,14 @@ const HeroSection = () => {
             >
               <Linkedin size={20} />
             </a>
+            <a
+              href="https://www.youtube.com/@DebugWithRoshani"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full border border-border text-muted-foreground hover:text-red-500 hover:border-red-500/50 transition-colors"
+            >
+              <Youtube size={20} />
+            </a>
           </div>
         </div>
 

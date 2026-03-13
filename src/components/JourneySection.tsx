@@ -83,13 +83,15 @@ const JourneySection = () => {
             <Award className="text-primary" size={24} /> Achievements
           </h3>
           <div className="grid sm:grid-cols-2 gap-3">
-            {[
-              "Earned the 50-Day LeetCode Badge (LeetCode & GeeksforGeeks)",
-              "2nd Runner-Up in a Coding Quiz (LPU CPE)",
-            ].map((a) => (
-              <div key={a} className="bg-card rounded-lg border border-border p-4 text-sm text-muted-foreground">
-                🏆 {a}
+            <a href="https://leetcode.com/medal/?showImg=0&id=8122549&isLevel=false" target="_blank" rel="noopener noreferrer" className="bg-card rounded-lg border border-border p-4 text-sm text-muted-foreground hover:border-primary/50 transition-colors block">
+              <div className="flex items-center gap-3">
+                <img src="https://assets.leetcode.com/static_assets/marketing/50.gif" alt="LeetCode 50-Day Badge" className="w-12 h-12" />
+                <span>🏆 Earned the 50-Day LeetCode Badge (LeetCode & GeeksforGeeks)</span>
               </div>
+            </a>
+            <div className="bg-card rounded-lg border border-border p-4 text-sm text-muted-foreground">
+              🏆 2nd Runner-Up in a Coding Quiz (LPU CPE)
+            </div>
             ))}
           </div>
         </div>
