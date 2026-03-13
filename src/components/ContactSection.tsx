@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, Youtube } from "lucide-react";
 import { useState } from "react";
 
 const ContactSection = () => {
