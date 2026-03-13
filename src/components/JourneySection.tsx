@@ -1,10 +1,19 @@
-import { BookOpen, Award, GraduationCap } from "lucide-react";
+import { BookOpen, Award, GraduationCap, ExternalLink } from "lucide-react";
+import { useState } from "react";
 
 const JourneySection = () => {
+  const [expandedCert, setExpandedCert] = useState<string | null>(null);
+
+  const certificates = [
+    { title: "Computational Theory: Language Principle & Finite Automata Theory", org: "Infosys", link: "https://drive.google.com/file/d/1AXteKTkV8WFLDi8ckGoZdx3wtxKcn9eT/view?usp=drive_link", preview: `https://drive.google.com/thumbnail?id=1AXteKTkV8WFLDi8ckGoZdx3wtxKcn9eT&sz=w800` },
+    { title: "Training in Git and GitHub", org: "Cipher Schools", preview: "/certificates/git-github.jpg", link: "/certificates/git-github.pdf" },
+    { title: "Data Analytics Job Simulations — Deloitte", org: "Deloitte", link: "https://drive.google.com/file/d/14x9bxwi5bWu9iIMuhi7Pg5VkOhzzP0oa/view?usp=drive_link", preview: `https://drive.google.com/thumbnail?id=14x9bxwi5bWu9iIMuhi7Pg5VkOhzzP0oa&sz=w800` },
+    { title: "Cloud Computing", org: "NPTEL", link: "https://drive.google.com/file/d/10DqI5stvOCxWM5yXaKUbTtkPX9hKE_ye/view?usp=drive_link", preview: `https://drive.google.com/thumbnail?id=10DqI5stvOCxWM5yXaKUbTtkPX9hKE_ye&sz=w800` },
+  ];
+
   return (
     <section id="journey" className="section-padding">
       <div className="container mx-auto px-6 max-w-4xl">
-        {/* Journey in Data Science */}
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-12 text-center">
           Journey in <span className="text-gradient">Data Science</span>
         </h2>
@@ -41,17 +50,27 @@ const JourneySection = () => {
             <BookOpen className="text-primary" size={24} /> Training
           </h3>
           <div className="bg-card rounded-xl border border-border p-6">
-            <h4 className="font-heading font-semibold text-foreground">Data Structures & Algorithm using Java</h4>
-            <p className="text-sm text-muted-foreground mt-1">Cipher Schools • Jun' 2025 – Jul' 2025</p>
-            <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-              <li>• Built a strong foundation in core data structures including arrays, linked lists, stacks, queues, and recursion using Java</li>
-              <li>• Strengthened problem-solving skills by implementing algorithms with a focus on time and space complexity optimization</li>
-              <li>• Applied object-oriented programming principles to design efficient, modular, and reusable solutions</li>
-            </ul>
-            <div className="flex flex-wrap gap-2 mt-3">
-              {["Java", "OOP Concepts", "Data Structures & Algorithms"].map((t) => (
-                <span key={t} className="px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground text-xs">{t}</span>
-              ))}
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="flex-1">
+                <h4 className="font-heading font-semibold text-foreground">Data Structures & Algorithm using Java</h4>
+                <p className="text-sm text-muted-foreground mt-1">Cipher Schools • Jun' 2025 – Jul' 2025</p>
+                <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+                  <li>• Built a strong foundation in core data structures including arrays, linked lists, stacks, queues, and recursion using Java</li>
+                  <li>• Strengthened problem-solving skills by implementing algorithms with a focus on time and space complexity optimization</li>
+                  <li>• Applied object-oriented programming principles to design efficient, modular, and reusable solutions</li>
+                </ul>
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {["Java", "OOP Concepts", "Data Structures & Algorithms"].map((t) => (
+                    <span key={t} className="px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground text-xs">{t}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="md:w-48 shrink-0">
+                <a href="/certificates/training-dsa.pdf" target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary/50 transition-colors">
+                  <img src="/certificates/training-dsa.jpg" alt="DSA Training Certificate" className="w-full h-auto" />
+                  <p className="text-xs text-primary text-center py-1.5">View Certificate →</p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -62,17 +81,38 @@ const JourneySection = () => {
             <Award className="text-primary" size={24} /> Certificates
           </h3>
           <div className="grid sm:grid-cols-2 gap-4">
-            {[
-              { title: "Computational Theory: Language Principle & Finite Automata Theory", org: "Infosys", link: "https://drive.google.com/file/d/1AXteKTkV8WFLDi8ckGoZdx3wtxKcn9eT/view?usp=drive_link" },
-              { title: "Training in Git and GitHub", org: "Cipher Schools" },
-              { title: "Data Analytics Job Simulations — Deloitte", org: "Deloitte", link: "https://drive.google.com/file/d/14x9bxwi5bWu9iIMuhi7Pg5VkOhzzP0oa/view?usp=drive_link" },
-              { title: "Cloud Computing", org: "NPTEL", link: "https://drive.google.com/file/d/10DqI5stvOCxWM5yXaKUbTtkPX9hKE_ye/view?usp=drive_link" },
-            ].map((c) => (
-              <a key={c.title} href={c.link || "#"} target={c.link ? "_blank" : undefined} rel="noopener noreferrer" className={`bg-card rounded-lg border border-border p-4 card-hover text-center block ${c.link ? "cursor-pointer hover:border-primary/50" : ""}`}>
-                <p className="font-heading font-semibold text-foreground text-sm">{c.title}</p>
-                <p className="text-xs text-muted-foreground mt-1">{c.org}</p>
-                {c.link && <p className="text-xs text-primary mt-2">View Certificate →</p>}
-              </a>
+            {certificates.map((c) => (
+              <div key={c.title} className="bg-card rounded-lg border border-border overflow-hidden hover:border-primary/50 transition-colors">
+                {c.preview && (
+                  <div
+                    className="cursor-pointer"
+                    onClick={() => setExpandedCert(expandedCert === c.title ? null : c.title)}
+                  >
+                    <img
+                      src={c.preview}
+                      alt={c.title}
+                      className="w-full h-40 object-cover object-top border-b border-border"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).style.display = 'none';
+                      }}
+                    />
+                  </div>
+                )}
+                <div className="p-4 text-center">
+                  <p className="font-heading font-semibold text-foreground text-sm">{c.title}</p>
+                  <p className="text-xs text-muted-foreground mt-1">{c.org}</p>
+                  {c.link && (
+                    <a
+                      href={c.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs text-primary mt-2 hover:underline"
+                    >
+                      View Certificate <ExternalLink size={12} />
+                    </a>
+                  )}
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -82,18 +122,21 @@ const JourneySection = () => {
           <h3 className="text-2xl font-heading font-bold text-foreground mb-6 flex items-center gap-2">
             <Award className="text-primary" size={24} /> Achievements
           </h3>
-          <div className="grid sm:grid-cols-2 gap-3">
-            <a href="https://leetcode.com/medal/?showImg=0&id=8122549&isLevel=false" target="_blank" rel="noopener noreferrer" className="bg-card rounded-lg border border-border p-4 text-sm text-muted-foreground hover:border-primary/50 transition-colors block">
-              <div className="flex items-center gap-3">
-                <img src="https://assets.leetcode.com/static_assets/marketing/50.gif" alt="LeetCode 50-Day Badge" className="w-12 h-12" />
-                <span>🏆 Earned the 50-Day LeetCode Badge (LeetCode & GeeksforGeeks)</span>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <a href="https://leetcode.com/medal/?showImg=0&id=8122549&isLevel=false" target="_blank" rel="noopener noreferrer" className="bg-card rounded-lg border border-border overflow-hidden hover:border-primary/50 transition-colors block">
+              <img src="/achievements/leetcode-badge.png" alt="LeetCode 50-Day Badge" className="w-full h-48 object-contain bg-secondary p-4" />
+              <div className="p-4 text-center">
+                <p className="text-sm font-semibold text-foreground">🏆 50-Day LeetCode Badge</p>
+                <p className="text-xs text-muted-foreground mt-1">LeetCode & GeeksforGeeks</p>
               </div>
             </a>
-            <div className="bg-card rounded-lg border border-border p-4 text-sm text-muted-foreground">
-              🏆 2nd Runner-Up in a Coding Quiz (LPU CPE)
+            <div className="bg-card rounded-lg border border-border overflow-hidden">
+              <img src="/achievements/coding-quiz.jpg" alt="2nd Runner-Up Coding Quiz" className="w-full h-48 object-cover" />
+              <div className="p-4 text-center">
+                <p className="text-sm font-semibold text-foreground">🏆 2nd Runner-Up in Coding Quiz</p>
+                <p className="text-xs text-muted-foreground mt-1">LPU CPE</p>
+              </div>
             </div>
-
-
           </div>
         </div>
 
