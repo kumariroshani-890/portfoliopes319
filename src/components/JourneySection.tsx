@@ -63,15 +63,16 @@ const JourneySection = () => {
           </h3>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { title: "Computational Theory: Language Principle & Finite Automata Theory", org: "Infosys" },
+              { title: "Computational Theory: Language Principle & Finite Automata Theory", org: "Infosys", link: "https://drive.google.com/file/d/1AXteKTkV8WFLDi8ckGoZdx3wtxKcn9eT/view?usp=drive_link" },
               { title: "Training in Git and GitHub", org: "Cipher Schools" },
-              { title: "Data Analytics Job Simulations — Deloitte", org: "Deloitte" },
-              { title: "Cloud Computing", org: "NPTEL" },
+              { title: "Data Analytics Job Simulations — Deloitte", org: "Deloitte", link: "https://drive.google.com/file/d/14x9bxwi5bWu9iIMuhi7Pg5VkOhzzP0oa/view?usp=drive_link" },
+              { title: "Cloud Computing", org: "NPTEL", link: "https://drive.google.com/file/d/10DqI5stvOCxWM5yXaKUbTtkPX9hKE_ye/view?usp=drive_link" },
             ].map((c) => (
-              <div key={c.title} className="bg-card rounded-lg border border-border p-4 card-hover text-center">
+              <a key={c.title} href={c.link || "#"} target={c.link ? "_blank" : undefined} rel="noopener noreferrer" className={`bg-card rounded-lg border border-border p-4 card-hover text-center block ${c.link ? "cursor-pointer hover:border-primary/50" : ""}`}>
                 <p className="font-heading font-semibold text-foreground text-sm">{c.title}</p>
                 <p className="text-xs text-muted-foreground mt-1">{c.org}</p>
-              </div>
+                {c.link && <p className="text-xs text-primary mt-2">View Certificate →</p>}
+              </a>
             ))}
           </div>
         </div>
