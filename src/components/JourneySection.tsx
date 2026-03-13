@@ -92,7 +92,8 @@ const JourneySection = () => {
             <div className="bg-card rounded-lg border border-border p-4 text-sm text-muted-foreground">
               🏆 2nd Runner-Up in a Coding Quiz (LPU CPE)
             </div>
-            ))}
+
+
           </div>
         </div>
 
