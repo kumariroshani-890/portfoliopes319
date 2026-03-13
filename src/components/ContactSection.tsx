@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, Youtube } from "lucide-react";
 import { useState } from "react";
 
 const ContactSection = () => {
@@ -33,6 +33,9 @@ const ContactSection = () => {
               </a>
               <a href="mailto:roshni1985upl@gmail.com" className="p-3 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
                 <Mail size={22} />
+              </a>
+              <a href="https://www.youtube.com/@DebugWithRoshani" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full border border-border text-muted-foreground hover:text-red-500 hover:border-red-500/50 transition-colors">
+                <Youtube size={22} />
               </a>
             </div>
           </div>

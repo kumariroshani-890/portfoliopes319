@@ -1,4 +1,4 @@
-import { Download, ArrowDown, Github, Linkedin } from "lucide-react";
+import { Download, ArrowDown, Github, Linkedin, Youtube } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -77,6 +77,14 @@ const HeroSection = () => {
               className="p-3 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
             >
               <Linkedin size={20} />
+            </a>
+            <a
+              href="https://www.youtube.com/@DebugWithRoshani"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full border border-border text-muted-foreground hover:text-red-500 hover:border-red-500/50 transition-colors"
+            >
+              <Youtube size={20} />
             </a>
           </div>
         </div>
