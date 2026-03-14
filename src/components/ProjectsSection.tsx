@@ -12,6 +12,8 @@ interface Project {
   period: string;
   liveUrl?: string;
   githubUrl?: string;
+  coverImage: string;
+  coverAlt: string;
 }
 
 const projects: Project[] = [
@@ -27,6 +29,8 @@ const projects: Project[] = [
     outcome: "Provides telecom businesses with clear, data-driven insights to understand churn patterns and take proactive retention measures.",
     githubUrl: "https://github.com/kumariroshani-890/Advanced-Telecom-Customer-Churn-Analysis-Dashboard",
     liveUrl: "https://www.linkedin.com/posts/roshanikumari110_powerbi-dataanalytics-customerchurn-activity-7408097500055818240-MJvC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEZMPY0B2hJMHWimzYC3n6ByU3jSBZ8TkVg",
+    coverImage: "/projects/telecom-dashboard-bg.png",
+    coverAlt: "Telecom churn analytics concept visual",
   },
   {
     icon: "📊",
@@ -40,6 +44,8 @@ const projects: Project[] = [
     outcome: "Simplified complex library data into clean, dynamic visuals for better decision-making across multiple counties.",
     githubUrl: "https://github.com/kumariroshani-890/INT217_INTERACTIVEDASHBOARD_PUBLICLIBRARIES",
     liveUrl: "https://www.linkedin.com/posts/roshanikumari110_lpu-cse-datascience-activity-7316789902266773504-2uGJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEZMPY0B2hJMHWimzYC3n6ByU3jSBZ8TkVg",
+    coverImage: "/projects/public-libraries-bg.png",
+    coverAlt: "Public library dashboard project visual",
   },
   {
     icon: "⚙️",
@@ -52,6 +58,8 @@ const projects: Project[] = [
     techStack: ["Java", "Maven", "CI/CD", "Git"],
     outcome: "Demonstrates end-to-end CI/CD pipeline setup for Java applications, enabling automated builds, tests, and deployments.",
     githubUrl: "https://github.com/kumariroshani-890/java-maven-ci-cd-demo",
+    coverImage: "/projects/java-cicd-bg.png",
+    coverAlt: "Java CI/CD pipeline architecture visual",
   },
 ];
 
@@ -62,13 +70,20 @@ const ProjectsSection = () => {
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-3 text-center">
           <span className="text-gradient">Projects</span>
         </h2>
-        <p className="text-muted-foreground text-center mb-12">
-          Hands-on work demonstrating my technical journey
-        </p>
+        <p className="text-muted-foreground text-center mb-12">Hands-on work demonstrating my technical journey</p>
 
         <div className="space-y-8">
           {projects.map((p) => (
             <div key={p.title} className="bg-card rounded-xl border border-border p-6 md:p-8 card-hover">
+              <div className="mb-5 overflow-hidden rounded-lg border border-border/70">
+                <img
+                  src={p.coverImage}
+                  alt={p.coverAlt}
+                  loading="lazy"
+                  className="h-44 w-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+
               <div className="flex items-start gap-4 mb-1">
                 <span className="text-3xl">{p.icon}</span>
                 <div>
@@ -76,6 +91,7 @@ const ProjectsSection = () => {
                   <p className="text-xs text-muted-foreground">{p.period}</p>
                 </div>
               </div>
+
               <div className="grid md:grid-cols-2 gap-4 mb-4 mt-4 text-sm">
                 <div>
                   <p className="text-primary font-medium mb-1">Problem:</p>
@@ -86,10 +102,12 @@ const ProjectsSection = () => {
                   <p className="text-muted-foreground">{p.solution}</p>
                 </div>
               </div>
+
               <p className="text-sm text-muted-foreground mb-4">
                 <span className="text-primary font-medium">My Role: </span>
                 {p.role}
               </p>
+
               {p.highlights && (
                 <div className="mb-4">
                   <p className="text-primary font-medium text-sm mb-2">Highlights:</p>
@@ -100,6 +118,7 @@ const ProjectsSection = () => {
                   </ul>
                 </div>
               )}
+
               <div className="flex flex-wrap gap-2 mb-4">
                 {p.techStack.map((t) => (
                   <span key={t} className="px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground text-xs font-medium">
@@ -107,20 +126,32 @@ const ProjectsSection = () => {
                   </span>
                 ))}
               </div>
+
               <div className="bg-secondary/50 rounded-lg p-4 mb-4">
                 <p className="text-sm text-muted-foreground">
                   <span className="text-primary">💡 Learning Outcome: </span>
                   {p.outcome}
                 </p>
               </div>
+
               <div className="flex gap-3">
                 {p.liveUrl && (
-                  <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity">
+                  <a
+                    href={p.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+                  >
                     <ExternalLink size={14} /> LinkedIn Post
                   </a>
                 )}
                 {p.githubUrl && (
-                  <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-foreground text-sm font-medium hover:border-primary/50 transition-colors">
+                  <a
+                    href={p.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-foreground text-sm font-medium hover:border-primary/50 transition-colors"
+                  >
                     <Github size={14} /> GitHub Repo
                   </a>
                 )}

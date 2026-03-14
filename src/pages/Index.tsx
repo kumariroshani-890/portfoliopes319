@@ -9,15 +9,23 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <JourneySection />
-      <ContactSection />
-      <Footer />
+    <div className="relative min-h-screen overflow-hidden bg-background">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="portfolio-bg-glow portfolio-bg-glow--one" />
+        <div className="portfolio-bg-glow portfolio-bg-glow--two" />
+        <div className="portfolio-bg-glitter" />
+      </div>
+
+      <div className="relative z-10">
+        <Navbar />
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <JourneySection />
+        <ContactSection />
+        <Footer />
+      </div>
     </div>
   );
 };
