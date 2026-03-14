@@ -29,37 +29,22 @@ const HeroSection = () => {
             Open to Opportunities
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-2">
-            Hi, I'm Roshani Kumari
-          </h1>
-          <p className="text-2xl md:text-3xl font-heading font-semibold text-gradient mb-6 glow-text">
-            Aspiring Data Scientist
-          </p>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-2">Hi, I'm Roshani Kumari</h1>
+          <p className="text-2xl md:text-3xl font-heading font-semibold text-gradient mb-6 glow-text">Aspiring Data Scientist</p>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8 leading-relaxed">
-            CSE undergraduate building real-world projects in{" "}
-            <span className="text-primary">Data Science & ML</span>. Strong problem-solver with a passion for{" "}
-            <span className="text-primary">analyzing data</span> and turning insights into impactful solutions.
+            CSE undergraduate building real-world projects in <span className="text-primary">Data Science & ML</span>. Strong problem-solver with a passion for <span className="text-primary">analyzing data</span> and turning insights into impactful solutions.
           </p>
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <a
-              href="/resume.pdf"
+              href="https://drive.google.com/file/d/1feGhVrsj6aGWyrv3vyGelZ4oezdsgIdp/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(e) => {
-                e.preventDefault();
-                const link = document.createElement('a');
-                link.href = '/resume.pdf';
-                link.download = 'Roshani_Kumari_Resume.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
             >
               <Download size={18} />
-              Download Resume
+              Open Resume
             </a>
             <a
               href="#projects"
