@@ -67,25 +67,29 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="section-padding">
       <div className="container mx-auto px-6 max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-3 text-center">
+        <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-3 text-center animate-fade-in-up">
           <span className="text-gradient">Projects</span>
         </h2>
-        <p className="text-muted-foreground text-center mb-12">Hands-on work demonstrating my technical journey</p>
+        <p className="text-muted-foreground text-center mb-12 animate-fade-in-up animate-delay-1">Hands-on work demonstrating my technical journey</p>
 
         <div className="space-y-8">
-          {projects.map((p) => (
-            <div key={p.title} className="bg-card rounded-xl border border-border p-6 md:p-8 card-hover">
+          {projects.map((p, i) => (
+            <div
+              key={p.title}
+              className="bg-card rounded-xl border border-border p-6 md:p-8 card-hover animate-fade-in-up"
+              style={{ animationDelay: `${i * 0.2}s`, animation: `fade-in-up 0.8s ease-out ${i * 0.2}s both` }}
+            >
               <div className="mb-5 overflow-hidden rounded-lg border border-border/70">
                 <img
                   src={p.coverImage}
                   alt={p.coverAlt}
                   loading="lazy"
-                  className="h-44 w-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="h-44 w-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
 
               <div className="flex items-start gap-4 mb-1">
-                <span className="text-3xl">{p.icon}</span>
+                <span className="text-3xl" style={{ animation: "float 3s ease-in-out infinite" }}>{p.icon}</span>
                 <div>
                   <h3 className="text-xl font-heading font-bold text-foreground">{p.title}</h3>
                   <p className="text-xs text-muted-foreground">{p.period}</p>
@@ -121,7 +125,7 @@ const ProjectsSection = () => {
 
               <div className="flex flex-wrap gap-2 mb-4">
                 {p.techStack.map((t) => (
-                  <span key={t} className="px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground text-xs font-medium">
+                  <span key={t} className="px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground text-xs font-medium transition-all hover:scale-110 hover:bg-primary/20 hover:text-primary cursor-default">
                     {t}
                   </span>
                 ))}
@@ -136,22 +140,12 @@ const ProjectsSection = () => {
 
               <div className="flex gap-3">
                 {p.liveUrl && (
-                  <a
-                    href={p.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
-                  >
+                  <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all hover:scale-105 hover:-translate-y-0.5">
                     <ExternalLink size={14} /> LinkedIn Post
                   </a>
                 )}
                 {p.githubUrl && (
-                  <a
-                    href={p.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-foreground text-sm font-medium hover:border-primary/50 transition-colors"
-                  >
+                  <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-foreground text-sm font-medium hover:border-primary/50 transition-all hover:scale-105 hover:-translate-y-0.5">
                     <Github size={14} /> GitHub Repo
                   </a>
                 )}
