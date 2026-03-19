@@ -1,7 +1,22 @@
 import { Download, ArrowDown, Github, Linkedin, Youtube } from "lucide-react";
 
-const openLink = (url: string) => {
-  window.open(url, "_blank", "noopener,noreferrer");
+const openExternalLink = (url: string) => {
+  const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+
+  if (newWindow) {
+    newWindow.opener = null;
+    newWindow.focus();
+    return;
+  }
+
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.target = "_blank";
+  anchor.rel = "noopener noreferrer";
+  anchor.style.display = "none";
+  document.body.appendChild(anchor);
+  anchor.click();
+  document.body.removeChild(anchor);
 };
 
 const HeroSection = () => {
@@ -9,8 +24,8 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0" style={{ background: "var(--hero-gradient)" }} />
 
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <div className="max-w-3xl mx-auto bg-card/60 backdrop-blur-sm rounded-2xl border border-border p-10 md:p-14 glow-border animate-fade-in-up">
+      <div className="relative z-10 container mx-auto w-full px-6 text-center">
+        <div className="mx-auto w-full max-w-5xl rounded-[2rem] border border-border/80 bg-card/45 p-10 backdrop-blur-md glow-border animate-fade-in-up md:p-16">
           {/* Profile photo */}
           <div className="relative w-40 h-40 mx-auto mb-6" style={{ animation: "float 4s ease-in-out infinite" }}>
             <div className="absolute inset-0 rounded-full border-2 border-primary/40 animate-spin" style={{ animationDuration: "8s" }} />
@@ -37,7 +52,7 @@ const HeroSection = () => {
           <p className="text-2xl md:text-3xl font-heading font-extrabold text-gradient mb-6 glow-text animate-slide-text-rl animate-title-float">
             Aspiring Data Scientist
           </p>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8 leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+          <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-muted-foreground animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             CSE undergraduate building real-world projects in <span className="text-primary font-bold">Data Science & ML</span>. Strong problem-solver with a passion for <span className="text-primary font-bold">analyzing data</span> and turning insights into impactful solutions.
           </p>
 
@@ -69,7 +84,7 @@ const HeroSection = () => {
             ].map((s) => (
               <button
                 key={s.url}
-                onClick={() => openLink(s.url)}
+                onClick={() => openExternalLink(s.url)}
                 className={`p-3 rounded-full border border-border text-muted-foreground ${s.hoverClass} transition-all hover:scale-110 hover:-translate-y-1 cursor-pointer`}
               >
                 {s.icon}

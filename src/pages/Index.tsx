@@ -15,7 +15,7 @@ const Index = () => {
         <img
           src="/spiral-bg.png"
           alt=""
-          className="w-full h-full object-cover opacity-[0.07]"
+          className="h-full w-full scale-105 object-cover opacity-[0.05] blur-[2px]"
           style={{ animation: "slow-rotate 60s linear infinite" }}
         />
       </div>
@@ -24,6 +24,7 @@ const Index = () => {
         <div className="portfolio-bg-glow portfolio-bg-glow--one" />
         <div className="portfolio-bg-glow portfolio-bg-glow--two" />
         <div className="portfolio-bg-glitter" />
+        <div className="portfolio-bg-mist" />
       </div>
 
       <div className="relative z-10">

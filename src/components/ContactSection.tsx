@@ -1,8 +1,23 @@
 import { Github, Linkedin, Mail, Youtube } from "lucide-react";
 import { useState } from "react";
 
-const openLink = (url: string) => {
-  window.open(url, "_blank", "noopener,noreferrer");
+const openExternalLink = (url: string) => {
+  const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+
+  if (newWindow) {
+    newWindow.opener = null;
+    newWindow.focus();
+    return;
+  }
+
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.target = "_blank";
+  anchor.rel = "noopener noreferrer";
+  anchor.style.display = "none";
+  document.body.appendChild(anchor);
+  anchor.click();
+  document.body.removeChild(anchor);
 };
 
 const ContactSection = () => {
@@ -22,7 +37,7 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="section-padding">
-      <div className="container mx-auto px-6 max-w-4xl">
+      <div className="container mx-auto w-full px-6 max-w-4xl">
         <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-foreground mb-3 text-center">
           <span className="animate-slide-text-lr">Get In</span>{" "}
           <span className="text-gradient animate-title-float font-extrabold" style={{ animationDelay: "0.3s" }}>Touch</span>
@@ -40,7 +55,7 @@ const ContactSection = () => {
                 s.isExternal ? (
                   <button
                     key={s.url}
-                    onClick={() => openLink(s.url)}
+                    onClick={() => openExternalLink(s.url)}
                     className={`p-3 rounded-full border border-border text-muted-foreground ${s.hoverClass} transition-all hover:scale-125 hover:-translate-y-2 cursor-pointer`}
                     style={{ animation: `float ${3 + i * 0.5}s ease-in-out infinite`, animationDelay: `${i * 0.3}s` }}
                   >

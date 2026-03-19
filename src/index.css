@@ -209,38 +209,64 @@
 .portfolio-bg-glow {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(80px);
-  opacity: 0.5;
-  animation: drift-glow 16s ease-in-out infinite;
+  filter: blur(110px);
+  opacity: 0.34;
+  animation: drift-glow 20s ease-in-out infinite;
 }
 
 .portfolio-bg-glow--one {
-  width: 34rem;
-  height: 34rem;
-  top: 10rem;
-  left: -10rem;
-  background: radial-gradient(circle, hsl(var(--primary) / 0.3) 0%, transparent 72%);
+  width: 40rem;
+  height: 40rem;
+  top: 8rem;
+  left: -12rem;
+  background: radial-gradient(circle, hsl(var(--primary) / 0.22) 0%, transparent 72%);
 }
 
 .portfolio-bg-glow--two {
-  width: 38rem;
-  height: 38rem;
-  right: -14rem;
-  top: 34rem;
-  animation-delay: 2s;
-  background: radial-gradient(circle, hsl(var(--accent) / 0.26) 0%, transparent 70%);
+  width: 44rem;
+  height: 44rem;
+  right: -16rem;
+  top: 30rem;
+  animation-delay: 3s;
+  background: radial-gradient(circle, hsl(var(--accent) / 0.18) 0%, transparent 72%);
 }
 
 .portfolio-bg-glitter {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(hsl(var(--primary) / 0.26) 1px, transparent 1px),
-    radial-gradient(hsl(var(--foreground) / 0.14) 1px, transparent 1px);
-  background-size: 4px 4px, 7px 7px;
-  background-position: 0 0, 26px 28px;
-  animation: glitter-pulse 7s ease-in-out infinite;
-  opacity: 0.45;
+    radial-gradient(hsl(var(--primary) / 0.14) 1px, transparent 1px),
+    radial-gradient(hsl(var(--foreground) / 0.08) 1px, transparent 1px);
+  background-size: 6px 6px, 12px 12px;
+  background-position: 0 0, 28px 30px;
+  animation: glitter-pulse 10s ease-in-out infinite;
+  opacity: 0.22;
+}
+
+.portfolio-bg-mist {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, hsl(var(--foreground) / 0.06), transparent 34%),
+    radial-gradient(circle at 78% 22%, hsl(var(--primary) / 0.08), transparent 30%),
+    linear-gradient(180deg, hsl(var(--background) / 0.08) 0%, hsl(var(--background) / 0.42) 100%);
+  backdrop-filter: blur(8px);
+  opacity: 0.8;
+}
+
+.section-padding > .container,
+footer > .container,
+nav > .container {
+  width: min(100% - 3rem, 88rem);
+  max-width: 88rem;
+}
+
+@media (max-width: 768px) {
+  .section-padding > .container,
+  footer > .container,
+  nav > .container {
+    width: min(100% - 1.5rem, 88rem);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
