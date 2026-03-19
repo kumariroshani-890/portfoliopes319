@@ -55,7 +55,7 @@ const ContactSection = () => {
                 s.isExternal ? (
                   <button
                     key={s.url}
-                    onClick={() => openLink(s.url)}
+                    onClick={() => openExternalLink(s.url)}
                     className={`p-3 rounded-full border border-border text-muted-foreground ${s.hoverClass} transition-all hover:scale-125 hover:-translate-y-2 cursor-pointer`}
                     style={{ animation: `float ${3 + i * 0.5}s ease-in-out infinite`, animationDelay: `${i * 0.3}s` }}
                   >
