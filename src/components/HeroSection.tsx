@@ -84,7 +84,7 @@ const HeroSection = () => {
             ].map((s) => (
               <button
                 key={s.url}
-                onClick={() => openLink(s.url)}
+                onClick={() => openExternalLink(s.url)}
                 className={`p-3 rounded-full border border-border text-muted-foreground ${s.hoverClass} transition-all hover:scale-110 hover:-translate-y-1 cursor-pointer`}
               >
                 {s.icon}
