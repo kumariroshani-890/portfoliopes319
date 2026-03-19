@@ -1,8 +1,23 @@
 import { Github, Linkedin, Mail, Youtube } from "lucide-react";
 import { useState } from "react";
 
-const openLink = (url: string) => {
-  window.open(url, "_blank", "noopener,noreferrer");
+const openExternalLink = (url: string) => {
+  const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+
+  if (newWindow) {
+    newWindow.opener = null;
+    newWindow.focus();
+    return;
+  }
+
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.target = "_blank";
+  anchor.rel = "noopener noreferrer";
+  anchor.style.display = "none";
+  document.body.appendChild(anchor);
+  anchor.click();
+  document.body.removeChild(anchor);
 };
 
 const ContactSection = () => {

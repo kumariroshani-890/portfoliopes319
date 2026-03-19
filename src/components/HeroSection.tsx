@@ -1,7 +1,22 @@
 import { Download, ArrowDown, Github, Linkedin, Youtube } from "lucide-react";
 
-const openLink = (url: string) => {
-  window.open(url, "_blank", "noopener,noreferrer");
+const openExternalLink = (url: string) => {
+  const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+
+  if (newWindow) {
+    newWindow.opener = null;
+    newWindow.focus();
+    return;
+  }
+
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.target = "_blank";
+  anchor.rel = "noopener noreferrer";
+  anchor.style.display = "none";
+  document.body.appendChild(anchor);
+  anchor.click();
+  document.body.removeChild(anchor);
 };
 
 const HeroSection = () => {
@@ -9,8 +24,8 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0" style={{ background: "var(--hero-gradient)" }} />
 
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <div className="max-w-3xl mx-auto bg-card/60 backdrop-blur-sm rounded-2xl border border-border p-10 md:p-14 glow-border animate-fade-in-up">
+      <div className="relative z-10 container mx-auto w-full px-6 text-center">
+        <div className="mx-auto w-full max-w-5xl rounded-[2rem] border border-border/80 bg-card/45 p-10 backdrop-blur-md glow-border animate-fade-in-up md:p-16">
           {/* Profile photo */}
           <div className="relative w-40 h-40 mx-auto mb-6" style={{ animation: "float 4s ease-in-out infinite" }}>
             <div className="absolute inset-0 rounded-full border-2 border-primary/40 animate-spin" style={{ animationDuration: "8s" }} />
