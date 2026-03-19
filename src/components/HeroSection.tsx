@@ -52,7 +52,7 @@ const HeroSection = () => {
           <p className="text-2xl md:text-3xl font-heading font-extrabold text-gradient mb-6 glow-text animate-slide-text-rl animate-title-float">
             Aspiring Data Scientist
           </p>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8 leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+          <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-muted-foreground animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             CSE undergraduate building real-world projects in <span className="text-primary font-bold">Data Science & ML</span>. Strong problem-solver with a passion for <span className="text-primary font-bold">analyzing data</span> and turning insights into impactful solutions.
           </p>
 

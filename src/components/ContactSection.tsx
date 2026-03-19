@@ -37,7 +37,7 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="section-padding">
-      <div className="container mx-auto px-6 max-w-4xl">
+      <div className="container mx-auto w-full px-6 max-w-4xl">
         <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-foreground mb-3 text-center">
           <span className="animate-slide-text-lr">Get In</span>{" "}
           <span className="text-gradient animate-title-float font-extrabold" style={{ animationDelay: "0.3s" }}>Touch</span>
