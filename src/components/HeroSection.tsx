@@ -46,8 +46,8 @@ const HeroSection = () => {
             Open to Opportunities
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-2 animate-slide-text-lr">
-            Hi, I'm <span className="animate-title-float text-gradient font-extrabold">Roshani Kumari</span>
+          <h1 className="text-4xl md:text-6xl font-heading font-extrabold text-foreground mb-2 animate-slide-text-lr">
+            Hi, I'm <span className="animate-title-float text-gradient font-black">Roshani Kumari</span>
           </h1>
           <p className="text-2xl md:text-3xl font-heading font-extrabold text-gradient mb-6 glow-text animate-slide-text-rl animate-title-float">
             Aspiring Data Scientist
